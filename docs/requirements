@@ -1,0 +1,70 @@
+
+Step 2: Build the Next.js Web Application
+2.1 Frontend Requirements
+
+Framework: Next.js with Tailwind CSS.
+Features:
+Display an amount label and pay button.
+Extract locationId from the dynamic URL (www.xyz.com/{locationId}/Pay).
+Generate a UUID client-side on pay button click.
+Call the POST API with transaction data.
+
+
+Dependencies:
+uuid for UUID generation.
+axios or fetch for API calls.
+Tailwind CSS for styling.
+
+
+
+2.2 Steps in Cursor AI
+
+Set Up Next.js Project:
+Run npx create-next-app@latest to create a project.
+Install dependencies: npm install uuid axios.
+Set up Tailwind CSS: Follow Next.js guide (install tailwindcss, postcss, autoprefixer).
+
+
+Create Dynamic Route:
+Create app/[locationId]/Pay/page.tsx.
+Use params.locationId to extract locationId.
+Display locationId on the UI.
+
+
+Generate UUID:
+On pay button click, use uuid library to generate a UUID.
+Create logtime in ISO 8601 format (e.g., new Date().toISOString()).
+
+
+Call POST API:
+Send POST request to API Gateway (/payment) with { uuid, location: locationId, amount, logtime }.
+Handle responses to show success/error messages.
+
+
+UI Components:
+Build a component in page.tsx for the amount label and pay button.
+Use Tailwind CSS for styling.
+Validate amount input (positive number).
+
+
+Rendering:
+Use client-side rendering for simplicity (dynamic locationId).
+Consider Server Components for future server-side validation.
+
+
+Testing:
+Run npm run dev to test locally.
+Verify UUID generation and API calls in browser dev tools.
+Test URLs like localhost:3000/store1/Pay, localhost:3000/store2/Pay.
+
+
+
+
+
+
+
+
+
+
+
+
