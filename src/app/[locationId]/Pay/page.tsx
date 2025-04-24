@@ -38,6 +38,8 @@ export default function PayPage() {
       notFound(); // Show 404 if locationId is invalid
     } else {
       setLocation(currentLocation);
+      // Set the browser tab title
+      document.title = `Pay at ${currentLocation.name}`;
     }
   }, [locationId]);
 
