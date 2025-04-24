@@ -56,7 +56,7 @@ export default function PayPage() {
     } catch (error: any) {
       if (error.response) {
         if (error.response.status === 409) {
-          setMessage("Concurrent transaction exists for this location. Please wait.");
+          setMessage("Previous transaction delivery not complete for this location. Please wait.");
         } else if (error.response.status === 400) {
           setMessage("Invalid input. Please check data.");
         } else {
